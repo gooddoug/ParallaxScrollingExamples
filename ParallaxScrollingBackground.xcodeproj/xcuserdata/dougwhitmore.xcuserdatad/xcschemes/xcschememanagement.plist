@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>ParallaxScrollingBackgroundTV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>EF29C5CD1C9D29A500CBCAE5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF29C5E41C9D2E8B00CBCAE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
