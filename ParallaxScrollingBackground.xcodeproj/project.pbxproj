@@ -17,6 +17,13 @@
 		EF29C5BC1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5BB1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.swift */; };
 		EF29C5C71C9D06A700CBCAE5 /* ParallaxBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5C61C9D06A700CBCAE5 /* ParallaxBackground.swift */; };
 		EF29C5C91C9D258E00CBCAE5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5C81C9D258E00CBCAE5 /* Image.swift */; };
+		EF29C5D11C9D29A500CBCAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5D01C9D29A500CBCAE5 /* AppDelegate.swift */; };
+		EF29C5D31C9D29A500CBCAE5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5D21C9D29A500CBCAE5 /* GameScene.swift */; };
+		EF29C5D51C9D29A500CBCAE5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EF29C5D41C9D29A500CBCAE5 /* GameScene.sks */; };
+		EF29C5D71C9D29A500CBCAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF29C5D61C9D29A500CBCAE5 /* Assets.xcassets */; };
+		EF29C5DA1C9D29A500CBCAE5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF29C5D81C9D29A500CBCAE5 /* MainMenu.xib */; };
+		EF29C5DF1C9D29F400CBCAE5 /* ParallaxBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5C61C9D06A700CBCAE5 /* ParallaxBackground.swift */; };
+		EF29C5E01C9D2A0000CBCAE5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5C81C9D258E00CBCAE5 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		EF29C5BD1C9D016600CBCAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF29C5C61C9D06A700CBCAE5 /* ParallaxBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxBackground.swift; sourceTree = "<group>"; };
 		EF29C5C81C9D258E00CBCAE5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		EF29C5CE1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParallaxScrollingBackgroundOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF29C5D01C9D29A500CBCAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF29C5D21C9D29A500CBCAE5 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		EF29C5D41C9D29A500CBCAE5 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		EF29C5D61C9D29A500CBCAE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF29C5D91C9D29A500CBCAE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EF29C5DB1C9D29A500CBCAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF29C5CB1C9D29A500CBCAE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +90,7 @@
 			children = (
 				EF29C5A11C9D016600CBCAE5 /* ParallaxScrollingBackground */,
 				EF29C5BA1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests */,
+				EF29C5CF1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX */,
 				EF29C5A01C9D016600CBCAE5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +100,7 @@
 			children = (
 				EF29C59F1C9D016600CBCAE5 /* ParallaxScrollingBackground.app */,
 				EF29C5B71C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.xctest */,
+				EF29C5CE1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +129,19 @@
 				EF29C5BD1C9D016600CBCAE5 /* Info.plist */,
 			);
 			path = ParallaxScrollingBackgroundTests;
+			sourceTree = "<group>";
+		};
+		EF29C5CF1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX */ = {
+			isa = PBXGroup;
+			children = (
+				EF29C5D01C9D29A500CBCAE5 /* AppDelegate.swift */,
+				EF29C5D21C9D29A500CBCAE5 /* GameScene.swift */,
+				EF29C5D41C9D29A500CBCAE5 /* GameScene.sks */,
+				EF29C5D61C9D29A500CBCAE5 /* Assets.xcassets */,
+				EF29C5D81C9D29A500CBCAE5 /* MainMenu.xib */,
+				EF29C5DB1C9D29A500CBCAE5 /* Info.plist */,
+			);
+			path = ParallaxScrollingBackgroundOSX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +182,23 @@
 			productReference = EF29C5B71C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EF29C5CD1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF29C5DC1C9D29A500CBCAE5 /* Build configuration list for PBXNativeTarget "ParallaxScrollingBackgroundOSX" */;
+			buildPhases = (
+				EF29C5CA1C9D29A500CBCAE5 /* Sources */,
+				EF29C5CB1C9D29A500CBCAE5 /* Frameworks */,
+				EF29C5CC1C9D29A500CBCAE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParallaxScrollingBackgroundOSX;
+			productName = ParallaxScrollingBackgroundOSX;
+			productReference = EF29C5CE1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +215,9 @@
 					EF29C5B61C9D016600CBCAE5 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = EF29C59E1C9D016600CBCAE5;
+					};
+					EF29C5CD1C9D29A500CBCAE5 = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
@@ -180,6 +236,7 @@
 			targets = (
 				EF29C59E1C9D016600CBCAE5 /* ParallaxScrollingBackground */,
 				EF29C5B61C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests */,
+				EF29C5CD1C9D29A500CBCAE5 /* ParallaxScrollingBackgroundOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +260,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF29C5CC1C9D29A500CBCAE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF29C5D71C9D29A500CBCAE5 /* Assets.xcassets in Resources */,
+				EF29C5D51C9D29A500CBCAE5 /* GameScene.sks in Resources */,
+				EF29C5DA1C9D29A500CBCAE5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -223,6 +290,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF29C5BC1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF29C5CA1C9D29A500CBCAE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF29C5D31C9D29A500CBCAE5 /* GameScene.swift in Sources */,
+				EF29C5E01C9D2A0000CBCAE5 /* Image.swift in Sources */,
+				EF29C5DF1C9D29F400CBCAE5 /* ParallaxBackground.swift in Sources */,
+				EF29C5D11C9D29A500CBCAE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +329,14 @@
 				EF29C5B01C9D016600CBCAE5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EF29C5D81C9D29A500CBCAE5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF29C5D91C9D29A500CBCAE5 /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -384,6 +470,36 @@
 			};
 			name = Release;
 		};
+		EF29C5DD1C9D29A500CBCAE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ParallaxScrollingBackgroundOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EF29C5DE1C9D29A500CBCAE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ParallaxScrollingBackgroundOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,6 +525,14 @@
 			buildConfigurations = (
 				EF29C5C41C9D016600CBCAE5 /* Debug */,
 				EF29C5C51C9D016600CBCAE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF29C5DC1C9D29A500CBCAE5 /* Build configuration list for PBXNativeTarget "ParallaxScrollingBackgroundOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF29C5DD1C9D29A500CBCAE5 /* Debug */,
+				EF29C5DE1C9D29A500CBCAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
