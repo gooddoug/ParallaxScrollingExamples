@@ -9,14 +9,28 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+        let background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
+        
+        background.backgroundSpriteListHead.apply { sprite in
+            self.addChild(sprite)
+        }
+        
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!"
         myLabel.fontSize = 45
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        
         self.addChild(myLabel)
+        
+        background.foregroundSpriteListHead.apply { sprite in
+            self.addChild(sprite)
+        }
+        
+        let moveBackground = SKAction.customActionWithDuration(1.0) { _, _ in
+            background.xOffset = background.xOffset + 20.0
+        }
+        self.runAction(SKAction.repeatActionForever(moveBackground))
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

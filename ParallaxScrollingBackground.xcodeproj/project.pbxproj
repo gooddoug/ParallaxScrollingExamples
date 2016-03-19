@@ -15,6 +15,8 @@
 		EF29C5AE1C9D016600CBCAE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF29C5AD1C9D016600CBCAE5 /* Assets.xcassets */; };
 		EF29C5B11C9D016600CBCAE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF29C5AF1C9D016600CBCAE5 /* LaunchScreen.storyboard */; };
 		EF29C5BC1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5BB1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.swift */; };
+		EF29C5C71C9D06A700CBCAE5 /* ParallaxBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5C61C9D06A700CBCAE5 /* ParallaxBackground.swift */; };
+		EF29C5C91C9D258E00CBCAE5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF29C5C81C9D258E00CBCAE5 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		EF29C5B71C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParallaxScrollingBackgroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF29C5BB1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxScrollingBackgroundTests.swift; sourceTree = "<group>"; };
 		EF29C5BD1C9D016600CBCAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF29C5C61C9D06A700CBCAE5 /* ParallaxBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxBackground.swift; sourceTree = "<group>"; };
+		EF29C5C81C9D258E00CBCAE5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +88,13 @@
 				EF29C5A21C9D016600CBCAE5 /* AppDelegate.swift */,
 				EF29C5A41C9D016600CBCAE5 /* GameScene.sks */,
 				EF29C5A61C9D016600CBCAE5 /* GameScene.swift */,
+				EF29C5C61C9D06A700CBCAE5 /* ParallaxBackground.swift */,
 				EF29C5A81C9D016600CBCAE5 /* GameViewController.swift */,
 				EF29C5AA1C9D016600CBCAE5 /* Main.storyboard */,
 				EF29C5AD1C9D016600CBCAE5 /* Assets.xcassets */,
 				EF29C5AF1C9D016600CBCAE5 /* LaunchScreen.storyboard */,
 				EF29C5B21C9D016600CBCAE5 /* Info.plist */,
+				EF29C5C81C9D258E00CBCAE5 /* Image.swift */,
 			);
 			path = ParallaxScrollingBackground;
 			sourceTree = "<group>";
@@ -204,9 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF29C5C71C9D06A700CBCAE5 /* ParallaxBackground.swift in Sources */,
 				EF29C5A71C9D016600CBCAE5 /* GameScene.swift in Sources */,
 				EF29C5A91C9D016600CBCAE5 /* GameViewController.swift in Sources */,
 				EF29C5A31C9D016600CBCAE5 /* AppDelegate.swift in Sources */,
+				EF29C5C91C9D258E00CBCAE5 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
