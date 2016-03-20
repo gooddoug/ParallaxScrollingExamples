@@ -42,7 +42,7 @@ class BackgroundSprite: SKSpriteNode {
     }
 }
 
-class SimpleParallaxBackground: GKComponent {
+class SimpleParallaxBackground: BackgroundType {
     // MARK: BackgroundType
     var ready: Bool = false
     var xOffset: CGFloat  {
@@ -61,19 +61,19 @@ class SimpleParallaxBackground: GKComponent {
     }
     weak var scene: SKScene? = nil
     var backgroundOffsetFactor: CGFloat = 0.8
-    var foregroundOffsetFactor: CGFloat = 1.2
+    var foregroundOffsetFactor: CGFloat = 1.4
     
     // MARK: local stuff
     var viewSize: CGSize
-    var foreground: Image
-    var foregroundSize: CGSize
-    var background: Image
-    var backgroundSize: CGSize
+    private var foreground: Image
+    private var foregroundSize: CGSize
+    private var background: Image
+    private var backgroundSize: CGSize
     
-    var foregroundSpriteListHead: BackgroundSprite
-    var foregroundSpriteListTail: BackgroundSprite
-    var backgroundSpriteListHead: BackgroundSprite
-    var backgroundSpriteListTail: BackgroundSprite
+    private var foregroundSpriteListHead: BackgroundSprite
+    private var foregroundSpriteListTail: BackgroundSprite
+    private var backgroundSpriteListHead: BackgroundSprite
+    private var backgroundSpriteListTail: BackgroundSprite
     
     init(viewSize size: CGSize, foreground: Image, background: Image) {
         viewSize = size
@@ -88,7 +88,16 @@ class SimpleParallaxBackground: GKComponent {
         (head: backgroundSpriteListHead, tail: backgroundSpriteListTail) = SimpleParallaxBackground.generateList(image: self.background, imageSize: self.backgroundSize, viewSize: size, zPosition: -10.0)
     }
     
-    func checkOffset() {
+    func setupInScene(scene: SKScene) {
+        backgroundSpriteListHead.apply { sprite in
+            scene.addChild(sprite)
+        }
+        foregroundSpriteListHead.apply { sprite in
+            scene.addChild(sprite)
+        }
+    }
+    
+    private func checkOffset() {
         if foregroundSpriteListHead.maxX < 0.0 {
             (head: foregroundSpriteListHead, tail: foregroundSpriteListTail) = moveHead(foregroundSpriteListHead, toTail: foregroundSpriteListTail)
         }
