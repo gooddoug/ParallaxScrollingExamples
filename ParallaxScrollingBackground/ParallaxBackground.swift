@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 class BackgroundSprite: SKSpriteNode {
     var next: BackgroundSprite? = nil
@@ -30,16 +29,6 @@ class BackgroundSprite: SKSpriteNode {
             next.apply(f)
         }
     }
-    
-    func toArray() -> [BackgroundSprite] {
-        var current = self
-        var val = [self]
-        while let c = current.next {
-            current = c
-            val.append(current)
-        }
-        return val
-    }
 }
 
 class SimpleParallaxBackground: BackgroundType {
@@ -59,33 +48,28 @@ class SimpleParallaxBackground: BackgroundType {
             checkOffset()
         }
     }
-    weak var scene: SKScene? = nil
+
+    /// how far the background moves in relation to the "midground"
     var backgroundOffsetFactor: CGFloat = 0.8
+    /// how far the foreground moves in relation to the "midground"
     var foregroundOffsetFactor: CGFloat = 1.4
     
     // MARK: local stuff
-    var viewSize: CGSize
-    private var foreground: Image
-    private var foregroundSize: CGSize
-    private var background: Image
-    private var backgroundSize: CGSize
     
+    // the lists
     private var foregroundSpriteListHead: BackgroundSprite
     private var foregroundSpriteListTail: BackgroundSprite
     private var backgroundSpriteListHead: BackgroundSprite
     private var backgroundSpriteListTail: BackgroundSprite
     
     init(viewSize size: CGSize, foreground: Image, background: Image) {
-        viewSize = size
-        self.foreground = foreground
-        self.foregroundSize = self.foreground.size
-        self.background = background
-        self.backgroundSize = self.background.size
+        let foregroundSize = foreground.size
+        let backgroundSize = background.size
         xOffset = 0.0
         
-        (head: foregroundSpriteListHead, tail: foregroundSpriteListTail) = SimpleParallaxBackground.generateList(image: self.foreground, imageSize: self.foregroundSize, viewSize: size, zPosition: 10.0)
+        (head: foregroundSpriteListHead, tail: foregroundSpriteListTail) = SimpleParallaxBackground.generateList(image: foreground, imageSize: foregroundSize, viewSize: size, zPosition: 10.0)
         
-        (head: backgroundSpriteListHead, tail: backgroundSpriteListTail) = SimpleParallaxBackground.generateList(image: self.background, imageSize: self.backgroundSize, viewSize: size, zPosition: -10.0)
+        (head: backgroundSpriteListHead, tail: backgroundSpriteListTail) = SimpleParallaxBackground.generateList(image: background, imageSize: backgroundSize, viewSize: size, zPosition: -10.0)
     }
     
     func setupInScene(scene: SKScene) {
@@ -97,6 +81,7 @@ class SimpleParallaxBackground: BackgroundType {
         }
     }
     
+    /// checks whether we need to move the first one to the end to make a seamless background
     private func checkOffset() {
         if foregroundSpriteListHead.maxX < 0.0 {
             (head: foregroundSpriteListHead, tail: foregroundSpriteListTail) = moveHead(foregroundSpriteListHead, toTail: foregroundSpriteListTail)
@@ -118,14 +103,16 @@ class SimpleParallaxBackground: BackgroundType {
     
     private static func generateList(image image: Image, imageSize: CGSize, viewSize: CGSize, zPosition: CGFloat) -> (head: BackgroundSprite, tail: BackgroundSprite) {
         let howManySprites = Int(ceil(viewSize.width / imageSize.width)) + 2
-        print("sprite count: \(howManySprites)")
+        //print("sprite count: \(howManySprites)")
         let texture = SKTexture(image: image)
         let spriteListHead = BackgroundSprite(texture: texture, size: imageSize)
         let xOffset = (imageSize.width / 2.0) - (viewSize.width / 2.0)
         let yOffset = (imageSize.height / 2.0)
+        // create the first sprite
         spriteListHead.position = CGPoint(x: xOffset, y: yOffset)
         spriteListHead.zPosition = zPosition
         var currentSprite: BackgroundSprite = spriteListHead
+        // create the rest of the sprites and attach to the first
         for _ in 1..<howManySprites {
             let nextSprite = BackgroundSprite(texture: texture, size: imageSize)
             nextSprite.zPosition = zPosition
