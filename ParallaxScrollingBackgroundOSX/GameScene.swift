@@ -9,9 +9,28 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMove(to view: SKView) {
-        let background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
+    var background: SimpleParallaxBackground!
+    
+    enum Movement {
+        case forward, back, none
         
+        var offset: CGFloat {
+            switch self {
+            case .forward:
+                return 2.0
+            case .back:
+                return -2.0
+            case .none:
+                return 0.0
+            }
+        }
+        
+    }
+    
+    var movement = Movement.forward
+    
+    override func didMove(to view: SKView) {
+        background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!"
         myLabel.fontSize = 45
@@ -21,7 +40,7 @@ class GameScene: SKScene {
         background.setup(inScene: self)
         
         let moveBackground = SKAction.customAction(withDuration: 1.0) { _, _ in
-            background.xOffset = background.xOffset + 2.0
+            self.background.xOffset = self.background.xOffset + self.movement.offset
         }
         self.run(SKAction.repeatForever(moveBackground))
     }
@@ -41,7 +60,52 @@ class GameScene: SKScene {
         self.addChild(sprite)
     }
     
+    
+    // This is an oversimplification of doing this, a real game would need to handle this more gracefully
+    override func keyDown(with event: NSEvent) {
+        // a to move back and d to move forward
+        guard !shouldAutoscroll else { return }
+        let chars = event.characters
+        if let oneChar = chars?.first {
+            switch oneChar {
+            case "a":
+                movement = Movement.back
+                break
+            case "d":
+                movement = Movement.forward
+                break
+            default:
+                super.keyDown(with: event)
+            }
+            
+        }
+    }
+    
+    override func keyUp(with event: NSEvent) {
+        guard !shouldAutoscroll else { return }
+        let chars = event.characters
+        if let oneChar = chars?.first {
+            switch oneChar {
+            case "a":
+                movement = Movement.none
+                break
+            case "d":
+                movement = Movement.none
+                break
+            default:
+                super.keyUp(with: event)
+            }
+            
+        }
+    }
+    
     override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+    }
+    
+    var shouldAutoscroll = true {
+        didSet {
+            movement = shouldAutoscroll ? Movement.forward : Movement.none
+        }
     }
 }
