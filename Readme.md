@@ -1,4 +1,4 @@
-##ParallaxScrollingExamples
+## ParallaxScrollingExamples
 
 ParallaxScrollingExamples is a simple demonstration of a scrolling background using parallax as seen in many sidescrolling games. It comes with targets for iOS, macOS, and tvOS that add a simple scrolling background to the example SpriteKit project.
 
