@@ -80,6 +80,8 @@
 		EF29C5F41C9D2E8B00CBCAE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF29C5F61C9D2E8B00CBCAE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF29C6071C9E5EB400CBCAE5 /* BackgroundType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundType.swift; path = Common/BackgroundType.swift; sourceTree = "<group>"; };
+		EF3E8CA523087106003BBC76 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EF3E8CA62308710F003BBC76 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,8 @@
 		EF29C5961C9D016600CBCAE5 = {
 			isa = PBXGroup;
 			children = (
+				EF3E8CA62308710F003BBC76 /* Readme.md */,
+				EF3E8CA523087106003BBC76 /* LICENSE */,
 				EF29C5FC1C9D2FEB00CBCAE5 /* Common */,
 				EF29C5A11C9D016600CBCAE5 /* ParallaxScrollingBackgroundiOS */,
 				EF29C5BA1C9D016600CBCAE5 /* ParallaxScrollingBackgroundTests */,
