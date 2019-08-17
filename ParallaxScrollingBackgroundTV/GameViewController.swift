@@ -3,7 +3,7 @@
 //  ParallaxScrollingBackgroundTV
 //
 //  Created by Doug Whitmore on 3/18/16.
-//  Copyright (c) 2016 Good Doug. All rights reserved.
+//  Copyright (c) 2016, 2019 Good Doug. All rights reserved.
 //
 
 import UIKit
@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
             
             /* Set the scale mode to scale to fit the window */
             scene.size = skView.bounds.size
-            scene.scaleMode = .AspectFit
+            scene.scaleMode = .aspectFit
             
             skView.presentScene(scene)
         }

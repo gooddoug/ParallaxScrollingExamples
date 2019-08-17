@@ -13,5 +13,5 @@ protocol BackgroundType {
     var xOffset: CGFloat { get set }
     
     /// this call allows the background to set itself up in the scene
-    func setupInScene(scene: SKScene) -> ()
+    func setup(inScene scene: SKScene) -> ()
 }

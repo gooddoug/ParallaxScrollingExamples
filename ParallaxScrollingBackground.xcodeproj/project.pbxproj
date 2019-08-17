@@ -284,6 +284,7 @@
 				TargetAttributes = {
 					EF29C59E1C9D016600CBCAE5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = PKS229JK2G;
 					};
 					EF29C5B61C9D016600CBCAE5 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -302,6 +303,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -538,10 +540,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PKS229JK2G;
 				INFOPLIST_FILE = ParallaxScrollingBackground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -549,10 +553,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PKS229JK2G;
 				INFOPLIST_FILE = ParallaxScrollingBackground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -565,6 +571,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParallaxScrollingBackground.app/ParallaxScrollingBackground";
 			};
 			name = Debug;
@@ -577,6 +584,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParallaxScrollingBackground.app/ParallaxScrollingBackground";
 			};
 			name = Release;
@@ -593,6 +601,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -608,6 +617,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -621,6 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -636,6 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.gooddoug.ParallaxScrollingBackgroundTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -660,6 +672,7 @@
 				EF29C5C21C9D016600CBCAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF29C5C31C9D016600CBCAE5 /* Build configuration list for PBXNativeTarget "ParallaxScrollingBackgroundTests" */ = {
 			isa = XCConfigurationList;
@@ -668,6 +681,7 @@
 				EF29C5C51C9D016600CBCAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF29C5DC1C9D29A500CBCAE5 /* Build configuration list for PBXNativeTarget "ParallaxScrollingBackgroundOSX" */ = {
 			isa = XCConfigurationList;
@@ -676,6 +690,7 @@
 				EF29C5DE1C9D29A500CBCAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF29C5F71C9D2E8B00CBCAE5 /* Build configuration list for PBXNativeTarget "ParallaxScrollingBackgroundTV" */ = {
 			isa = XCConfigurationList;
@@ -684,6 +699,7 @@
 				EF29C5F91C9D2E8B00CBCAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

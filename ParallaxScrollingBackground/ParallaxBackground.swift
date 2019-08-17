@@ -3,29 +3,29 @@
 //  ParallaxScrollingBackground
 //
 //  Created by Doug Whitmore on 3/18/16.
-//  Copyright © 2016 Good Doug. All rights reserved.
+//  Copyright © 2016, 2019 Good Doug. All rights reserved.
 //
 
 import SpriteKit
 
 class BackgroundSprite: SKSpriteNode {
-    var next: BackgroundSprite? = nil
+    var nextSprite: BackgroundSprite? = nil
     var maxX: CGFloat {
         get {
             return self.position.x + self.size.width
         }
     }
     
-    /// sets the `next` pointer and moves the new one to be to the left of this one
-    func addNext(nx: BackgroundSprite) {
+    /// sets the `nextSprite` pointer and moves the new one to be to the left of this one
+    func add(nextSprite: BackgroundSprite) {
         let nextX = maxX
-        nx.position = CGPoint(x: nextX, y: self.position.y)
-        next = nx
+        nextSprite.position = CGPoint(x: nextX, y: self.position.y)
+        self.nextSprite = nextSprite
     }
     
-    func apply(f: (BackgroundSprite)->()) {
+    func apply(_ f: (BackgroundSprite)->()) {
         f(self)
-        if let next = self.next {
+        if let next = self.nextSprite {
             next.apply(f)
         }
     }
@@ -72,7 +72,7 @@ class SimpleParallaxBackground: BackgroundType {
         (head: backgroundSpriteListHead, tail: backgroundSpriteListTail) = SimpleParallaxBackground.generateList(image: background, imageSize: backgroundSize, viewSize: size, zPosition: -10.0)
     }
     
-    func setupInScene(scene: SKScene) {
+    func setup(inScene scene: SKScene) {
         backgroundSpriteListHead.apply { sprite in
             scene.addChild(sprite)
         }
@@ -84,24 +84,24 @@ class SimpleParallaxBackground: BackgroundType {
     /// checks whether we need to move the first one to the end to make a seamless background
     private func checkOffset() {
         if foregroundSpriteListHead.maxX < 0.0 {
-            (head: foregroundSpriteListHead, tail: foregroundSpriteListTail) = moveHead(foregroundSpriteListHead, toTail: foregroundSpriteListTail)
+            (head: foregroundSpriteListHead, tail: foregroundSpriteListTail) = moveHead(head: foregroundSpriteListHead, toTail: foregroundSpriteListTail)
         }
         if backgroundSpriteListHead.maxX < 0.0 {
-            (head: backgroundSpriteListHead, tail: backgroundSpriteListTail) = moveHead(backgroundSpriteListHead, toTail: backgroundSpriteListTail)
+            (head: backgroundSpriteListHead, tail: backgroundSpriteListTail) = moveHead(head: backgroundSpriteListHead, toTail: backgroundSpriteListTail)
         }
     }
     
     private func moveHead(head: BackgroundSprite, toTail tail: BackgroundSprite) -> (head: BackgroundSprite, tail: BackgroundSprite) {
         let toRecycle = head
-        guard let next = toRecycle.next else { fatalError("Bad list") }
+        guard let next = toRecycle.nextSprite else { fatalError("Bad list") }
         let newHead = next
-        tail.addNext(toRecycle)
+        tail.add(nextSprite:toRecycle)
         let newTail = toRecycle
-        newTail.next = nil
+        newTail.nextSprite = nil
         return (head: newHead, tail: newTail)
     }
     
-    private static func generateList(image image: Image, imageSize: CGSize, viewSize: CGSize, zPosition: CGFloat) -> (head: BackgroundSprite, tail: BackgroundSprite) {
+    private static func generateList(image: Image, imageSize: CGSize, viewSize: CGSize, zPosition: CGFloat) -> (head: BackgroundSprite, tail: BackgroundSprite) {
         let howManySprites = Int(ceil(viewSize.width / imageSize.width)) + 2
         //print("sprite count: \(howManySprites)")
         let texture = SKTexture(image: image)
@@ -114,10 +114,10 @@ class SimpleParallaxBackground: BackgroundType {
         var currentSprite: BackgroundSprite = spriteListHead
         // create the rest of the sprites and attach to the first
         for _ in 1..<howManySprites {
-            let nextSprite = BackgroundSprite(texture: texture, size: imageSize)
-            nextSprite.zPosition = zPosition
-            currentSprite.addNext(nextSprite)
-            currentSprite = nextSprite
+            let next = BackgroundSprite(texture: texture, size: imageSize)
+            next.zPosition = zPosition
+            currentSprite.add(nextSprite: next)
+            currentSprite = next
         }
         return (head: spriteListHead, tail:currentSprite)
     }

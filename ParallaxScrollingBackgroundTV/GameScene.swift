@@ -3,34 +3,34 @@
 //  ParallaxScrollingBackgroundTV
 //
 //  Created by Doug Whitmore on 3/18/16.
-//  Copyright (c) 2016 Good Doug. All rights reserved.
+//  Copyright (c) 2016, 2019 Good Doug. All rights reserved.
 //
 
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         let background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
         
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!"
         myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        myLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.addChild(myLabel)
         
-        background.setupInScene(self)
+        background.setup(inScene: self)
         
-        let moveBackground = SKAction.customActionWithDuration(1.0) { _, _ in
+        let moveBackground = SKAction.customAction(withDuration: 1.0) { _, _ in
             background.xOffset = background.xOffset + 2.0
         }
-        self.runAction(SKAction.repeatActionForever(moveBackground))
+        self.run(SKAction.repeatForever(moveBackground))
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
         for touch in touches {
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             
             let sprite = SKSpriteNode(imageNamed:"Spaceship")
             
@@ -38,15 +38,15 @@ class GameScene: SKScene {
             sprite.yScale = 0.5
             sprite.position = location
             
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+            let action = SKAction.rotate(byAngle: CGFloat.pi, duration:1)
             
-            sprite.runAction(SKAction.repeatActionForever(action))
+            sprite.run(SKAction.repeatForever(action))
             
             self.addChild(sprite)
         }
     }
    
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
 }
