@@ -11,6 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
     var background: SimpleParallaxBackground!
     
+    // MARK: - Enums
     enum Movement {
         case forward, back, none
         
@@ -89,6 +90,7 @@ class GameScene: SKScene {
         }
     }
     
+    // MARK: - Ship position, facing and movement
     var movement = Movement.forward {
         didSet {
             if let direction = movement.shipDirection, oldValue != movement {
@@ -106,6 +108,7 @@ class GameScene: SKScene {
     var shipDirection = ShipDirection.forward
     let ship = SKSpriteNode(imageNamed:"Spaceship")
     
+    // MARK: Scene stuff
     override func didMove(to view: SKView) {
         background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
         
