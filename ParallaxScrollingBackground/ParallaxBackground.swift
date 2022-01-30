@@ -62,7 +62,7 @@ class SimpleParallaxBackground: BackgroundType {
     private var backgroundSpriteListHead: BackgroundSprite
     private var backgroundSpriteListTail: BackgroundSprite
     
-    init(viewSize size: CGSize, foreground: Image, background: Image) {
+    init(viewSize size: CGSize, foreground: XPImage, background: XPImage) {
         let foregroundSize = foreground.size
         let backgroundSize = background.size
         xOffset = 0.0
@@ -101,7 +101,7 @@ class SimpleParallaxBackground: BackgroundType {
         return (head: newHead, tail: newTail)
     }
     
-    private static func generateList(image: Image, imageSize: CGSize, viewSize: CGSize, zPosition: CGFloat) -> (head: BackgroundSprite, tail: BackgroundSprite) {
+    private static func generateList(image: XPImage, imageSize: CGSize, viewSize: CGSize, zPosition: CGFloat) -> (head: BackgroundSprite, tail: BackgroundSprite) {
         let howManySprites = Int(ceil(viewSize.width / imageSize.width)) + 2
         //print("sprite count: \(howManySprites)")
         let texture = SKTexture(image: image)

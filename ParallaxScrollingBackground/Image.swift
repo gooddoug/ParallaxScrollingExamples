@@ -8,8 +8,8 @@
 
 #if os(iOS) || os(tvOS)
     import UIKit
-    typealias Image = UIImage
+    typealias XPImage = UIImage
 #else
     import AppKit
-    typealias Image = NSImage
+    typealias XPImage = NSImage
 #endif

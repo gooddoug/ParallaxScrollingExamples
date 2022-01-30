@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     override func didMove(to view: SKView) {
-        let background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
+        let background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: XPImage(named: "mountain_fore")!, background: XPImage(named: "mountain_bkgd")!)
         
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         myLabel.text = "Hello, World!"

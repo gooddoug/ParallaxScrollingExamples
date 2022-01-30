@@ -110,7 +110,7 @@ class GameScene: SKScene {
     
     // MARK: Scene stuff
     override func didMove(to view: SKView) {
-        background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: Image(named: "mountain_fore")!, background: Image(named: "mountain_bkgd")!)
+        background = SimpleParallaxBackground(viewSize: self.frame.size, foreground: XPImage(named: "mountain_fore")!, background: XPImage(named: "mountain_bkgd")!)
         
         background.setup(inScene: self)
         
